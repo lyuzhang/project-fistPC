@@ -1,0 +1,70 @@
+@import "reset";
+#wrap{
+  width: 100%;
+  overflow: hidden;
+  #header{
+    position: relative;
+    width: 100%;
+    background-color: yellowgreen;
+    .header-main{
+
+      background-color: pink;
+      width: 1100px;
+      height: 80px;
+      margin: 0 auto;
+      .logo{
+        float: left;
+        margin-top: 15px;
+      }
+      .nav{
+        margin-top: 50px;
+        float: right;
+
+        li{
+          position: relative;
+          float: left;
+          margin-left: 40px;
+          &:hover{
+            .down{
+              width: 100%;
+            }
+          }
+          &.active{
+            .down{
+              width: 100%;
+            }
+          }
+          .up{
+            color:#009EE0 ;
+          }
+          .down{
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: black;
+            overflow: hidden;
+            width: 0;
+            transition: width 1s;
+          }
+          }
+
+        }
+      .arrow{
+        position: absolute;
+        left: 50%;
+        bottom: -11px;
+        width: 21px;
+        height: 11px;
+        background-image: url("../images/arrow.png");
+      }
+      }
+
+    }
+  #content{
+    margin: 0 auto;
+    width: 1100px;
+    height: 520px;
+    background-color: green;
+  }
+
+  }
