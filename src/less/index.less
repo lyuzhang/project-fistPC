@@ -1,4 +1,11 @@
 @import "reset";
+.common-title{
+  color:#009ee0;
+  font-size:80px;
+  line-height:0.8;
+  font-weight:bold;
+  letter-spacing:-5px;
+}
 #wrap{
   height: 100%;
   overflow: hidden;
@@ -87,10 +94,112 @@
           right: 0;
           top: 0;
           margin: auto;
-          background-color:yellowgreen ;
+          //background-color:yellowgreen ;
+          &.home{
+            .home-carousel{
+              width: 100%;
+              height: 100%;
+              position: relative;
+              transform-style: preserve-3d;
+              perspective: 1000px;
+              li{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                left: 0;
+                top: 0;
+                text-align: center;
+                line-height: 520px;
+                color: #fff;
+                visibility: hidden;
+                &.show{
+                  visibility: visible;
+                }
+                &.leftHide{
+                  visibility: hidden;
+                  animation: leftHide 2s linear;
+                }
+                &.rightShow{
+                  visibility: visible;
+                  animation: rightShow 2s linear;
+                }
+                &.leftShow{
+                  visibility: visible;
+                  animation: leftShow 2s linear;
+                }
+                &.rightHide{
+                  visibility: hidden;
+                  animation: rightHide 2s linear;
+                }
+                &:nth-child(1){
+                  background:#dc6c5f;
+                }
+                &:nth-child(2){
+                  background:#95dc84;
+                }
+                &:nth-child(3){
+                  background:#64b9d2;
+                }
+                &:nth-child(4){
+                  background:#000000;
+                }
+
+              }
+            }
+            .home-points{
+              position: absolute;
+              left: 50%;
+              transform: translateX(-50%);
+              bottom: 0;
+              li{
+                float: left;
+                width: 20px;
+                height: 20px;
+                background-color: rgba(255,255,255,0.5);
+                margin: 2px;
+                box-shadow: 0 0 4px rgba(25,25,25,0.8);
+                border-radius: 50%;
+                &.active{
+                  background-color: rgba(255,255,255,1);
+                }
+
+              }
+
+
+            }
+          }
         }
       }
     }
   }
 
   }
+
+
+//第一屏动画
+/*
+
+*/
+@keyframes leftHide {
+  0%{visibility: visible;transform: translateZ(0)}
+  50%{transform: translateX(-40%) rotateY(30deg) scale(0.8)}
+  100%{visibility: hidden;transform: translateZ(-200px)}
+}
+@keyframes rightShow {
+  0%{visibility: hidden;transform: translateZ(-200px)}
+  50%{transform: translateX(40%) rotateY(-30deg) scale(0.8)}
+  100%{visibility: visible;transform: translateZ(0)}
+}
+
+
+@keyframes leftShow {
+  0%{visibility: hidden;transform: translateZ(-200px)}
+  50%{transform: translateX(-40%) rotateY(30deg) scale(0.8)}
+  100%{visibility: visible;transform: translateZ(0)}
+
+}
+@keyframes rightHide {
+  0%{visibility: visible;transform: translateZ(0)}
+  50%{transform: translateX(40%) rotateY(-30deg) scale(0.8)}
+  100%{visibility: hidden;transform: translateZ(-200px)}
+}
