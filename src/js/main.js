@@ -169,7 +169,7 @@ export default function () {
     event.preventDefault && event.preventDefault();
     return false;
   }
-  move(1);
+  move(4);
   function move(nowIndex) {
       for (var j = 0; j < L; j++) {
         navLiNodes[j].className = '';
