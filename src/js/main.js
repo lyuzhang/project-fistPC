@@ -169,7 +169,14 @@ export default function () {
     event.preventDefault && event.preventDefault();
     return false;
   }
-  move(4);
+  move(0);
+
+
+  //侧边导航定义的变量
+  const contentNavNode = document.querySelector('.content-nav');
+  const contentNavLiNodes = document.querySelectorAll(('.content-nav li'));
+  const contentNavLiNodesL = contentNavLiNodes.length;
+
   function move(nowIndex) {
       for (var j = 0; j < L; j++) {
         navLiNodes[j].className = '';
@@ -187,6 +194,20 @@ export default function () {
         ulNode.style.top = -nowIndex * contentHeight + 'px';
 
       }
+
+
+
+  }
+
+  //侧边导航
+  for (let i = 0; i < contentNavLiNodesL; i++){
+    contentNavLiNodes[i].onclick = function () {
+      for(var j = 0; j < contentNavLiNodesL; j++){
+        contentNavLiNodes[j].className = '';
+      }
+      this.className = 'active';
+      move(i);
+    }
   }
 
 }

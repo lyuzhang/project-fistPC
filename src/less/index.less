@@ -88,7 +88,7 @@
     bottom: 0;
     right: 0;
   //  background-color: green;
-    >ul{
+    .content-list{
       position: absolute;
       top: 0;//解决第一次点击无过渡的效果
       width: 100%;
@@ -414,6 +414,21 @@
               }
             }
           }
+        }
+      }
+    }
+    .content-nav{
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      li{
+        width: 15px;
+        height: 15px;
+        border: 1px solid white;
+        margin-top: 10px;
+        border-radius: 50%;
+        &.active{
+          background-color: white;
         }
       }
     }
